@@ -82,8 +82,8 @@ You can deploy this website using:
 ## 📬 Contact
 For any inquiries or collaboration, feel free to reach out:
 - Email: tahahasnat018@gmail.com
-- LinkedIn: [Your Profile](https://www.linkedin.com/in/taha-hasnat-0597ab187/)
-- GitHub: [Your GitHub](https://github.com/yourusername)
+- LinkedIn: [Taha Hasnat](https://www.linkedin.com/in/taha-hasnat-0597ab187/)
+- GitHub: [Taha Hasnat](https://github.com/tahahasnat018)
 
 ---
 ⭐ Feel free to star this repository if you like it!
