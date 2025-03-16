@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Muhammad Taha Hasnat</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a, nav ul li button {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        #education, #experience, #certifications {
+            margin-top: 50px;
+        }
+
+        .about-content, .projects-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .about-content section, .experience-item, .certification-item, .project-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .experience-item:hover, .certification-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .tags {
+            margin: 10px 0;
+        }
+
+        .tags .tag {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        footer {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+
+        .footer-left, .footer-center, .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-left p, .footer-center ul, .footer-right .social-icons {
+            margin: 0;
+        }
+
+        .footer-center ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-center ul li {
+            margin: 5px 0;
+        }
+
+        .footer-center ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-center ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-right .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-right .social-icons a {
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .footer-right .social-icons a:hover {
+            color: #ddd;
+        }
+
+        .dark-theme {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .dark-theme header, .dark-theme footer {
+            background-color: #000;
+        }
+
+        .dark-theme .btn {
+            background-color: #555;
+        }
+
+        .dark-theme .btn:hover {
+            background-color: #777;
+        }
+
+        .dark-theme .about-content section, .dark-theme .experience-item, .dark-theme .certification-item, .dark-theme .project-card {
+            background-color: #444;
+            color: #fff;
+        }
+
+        .dark-theme .tags .tag {
+            background-color: #555;
+        }
+
+        .certifications-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .certification-item {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            flex: 1;
+        }
+
+        .certification-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .certification-item img {
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        .certification-item h3 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .certification-item p {
+            margin: 5px 0;
+        }
+
+        .certification-item .issuer {
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        .certification-item .badge {
+            display: inline-block;
+            background-color: #ffcc00;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 0.8em;
+        }
+
+        .certification-item a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .certification-item a:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../Home Page/index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button id="theme-toggle">Toggle Theme</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="education">
+            <h2>Education</h2>
+            <p>Bachelor of Science in Artificial Intelligence<br>
+            Bahria University — Islamabad, Pakistan<br>
+            Expected Graduation: 2026</p>
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Data Mining</span>
+                <span class="tag">Deep Learning</span>
+                <span class="tag">Expert Systems</span>
+                <span class="tag">Computer Vision</span>
+                <span class="tag">Natural Language Processing</span>
+                <span class="tag">Reinforcement Learning</span>
+                <span class="tag">Artificial Neural Networks</span>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <div class="experience-item">
+                <h3>Junior AI Developer</h3>
+                <p>Nov 2024 – Present<br>
+                UCapacity Pvt. Ltd. — Islamabad, Pakistan</p>
+                <ul>
+                    <li>Enhanced product capabilities with advanced AI technologies.</li>
+                    <li>Designed and deployed AI-driven models for improved user experience.</li>
+                    <li>Managed AI lifecycle from data preprocessing to optimization.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>AI Developer Intern</h3>
+                <p>Aug 2024 – Oct 2024<br>
+                UCapacity Pvt. Ltd. — Islamabad, Pakistan</p>
+                <ul>
+                    <li>Developed predictive AI models using TensorFlow and PyTorch.</li>
+                    <li>Collected and curated datasets for real estate applications.</li>
+                    <li>Deployed models and evaluated success rates.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>Co-Founder / Managing Director</h3>
+                <p>Nov 2022 – Jan 2024<br>
+                AI Club — Bahria University, Islamabad</p>
+                <ul>
+                    <li>Established AI Club to foster innovation and collaboration.</li>
+                    <li>Organized workshops and hackathons to enhance skills.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="certifications-container">
+                <div class="certification-item">
+                    <img src="deeplearning.png" alt="DeepLearning.AI Logo">
+                    <div>
+                        <h3>AI Agents in LangGraph!</h3>
+                        <p class="issuer">DeepLearning.AI</p>
+                        <p>Issued Jan 2025</p>
+                        <p>AI Frameworks, Agents and +5 skills</p>
+                        <p>Taha Hasnat, congratulations on completing AI Agents in LangGraph!</p>
+                        <a href="https://learn.deeplearning.ai/accomplishments/4d3f6aed-fbae-40cc-af18-009540e692e6?usp=sharing">Show credential</a>
+                    </div>
+                </div>
+                <div class="certification-item">
+                    <img src="langchain.png" alt="LangChain Logo">
+                    <div>
+                        <h3>Introduction to LangGraph</h3>
+                        <p class="issuer">LangChain</p>
+                        <p>Issued Jan 2025</p>
+                        <p>Credential ID jfbvlvscud</p>
+                        <a href="https://academy.langchain.com/certificates/jfbvlvscud">Show credential</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-left">
+            <p>&copy; 2025 Muhammad Taha Hasnat. All Rights Reserved.</p>
+        </div>
+        <div class="footer-center">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="../Home Page/index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-right">
+            <h3>Connect</h3>
+            <div class="social-icons">
+                <a href="https://github.com/yourusername">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48A13.38 13.38 0 0 0 12 2a13.38 13.38 0 0 0-4 0C5.27.65 4.09 1 4.09 1A5.07 5.07 0 0 0 4 4.77a5.44 5.44 0 0 0-1.5 3.79c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 21.13V25"></path>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/taha-hasnat">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="mailto:tahahasnat018@gmail.com">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
+                        <path d="M4 4h16v16H4z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-theme');
+            }
+        });
+    </script>
+</body>
+</html>
