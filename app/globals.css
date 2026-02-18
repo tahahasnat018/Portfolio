@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0b0f14;
+  --surface: #0f1620;
+  --surface-2: #111b26;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #e8eef6;
+  --muted: rgba(232, 238, 246, 0.68);
+  --accent: #c7a46b;
+  --accent-soft: rgba(199, 164, 107, 0.18);
+  --radius-section: 20px;
+  --radius-card: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body), sans-serif;
+  background: radial-gradient(
+      1200px 500px at 20% -10%,
+      rgba(199, 164, 107, 0.06),
+      transparent 70%
+    ),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+.section-shell {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-section);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent),
+    var(--surface);
+}
+
+.premium-hover:hover {
+  box-shadow: 0 0 0 1px rgba(199, 164, 107, 0.25), 0 16px 40px rgba(0, 0, 0, 0.45);
+}

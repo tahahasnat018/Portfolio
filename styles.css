@@ -52,7 +52,7 @@ nav a:hover {
     to { width: 100%; }
 }
 
-@keyframes blink {s
+@keyframes blink {
     50% { border-color: transparent; }
 }
 
