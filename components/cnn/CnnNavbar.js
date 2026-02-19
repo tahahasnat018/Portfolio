@@ -42,9 +42,13 @@ export default function CnnNavbar() {
         >
           Taha Hasnat
         </Link>
-        <nav className="flex flex-wrap items-center gap-6 text-xs font-medium uppercase tracking-[0.14em] text-[var(--muted)]">
+        <nav className="flex flex-wrap items-center gap-6 text-xs font-medium uppercase tracking-[0.08em] text-[var(--muted)]">
           {navLinks.map((link) => (
-            <Link key={link.label} href={link.href} className="transition hover:text-[var(--accent)]">
+            <Link
+              key={link.label}
+              href={link.href}
+              className="border-b border-transparent pb-1 transition hover:border-[rgba(199,164,107,0.35)] hover:text-[var(--text)]"
+            >
               {link.label}
             </Link>
           ))}

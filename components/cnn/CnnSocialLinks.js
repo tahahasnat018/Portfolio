@@ -13,7 +13,7 @@ const links = [
   }
 ];
 
-export default function CnnSocialLinks({ className = "", separator = true }) {
+export default function CnnSocialLinks({ className = "", separator = false }) {
   return (
     <div className={`flex flex-wrap items-center gap-4 ${className}`}>
       {links.map((link, index) => (

@@ -27,12 +27,7 @@ body {
 
 body {
   font-family: var(--font-body), sans-serif;
-  background: radial-gradient(
-      1200px 500px at 20% -10%,
-      rgba(199, 164, 107, 0.06),
-      transparent 70%
-    ),
-    var(--bg);
+  background: var(--bg);
   color: var(--text);
   line-height: 1.6;
 }
@@ -56,4 +51,113 @@ a:hover {
 
 .premium-hover:hover {
   box-shadow: 0 0 0 1px rgba(199, 164, 107, 0.25), 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.premium-btn-primary {
+  background: linear-gradient(180deg, #d2b27a 0%, #b89255 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  color: #0b0f14;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.premium-btn-primary:hover {
+  filter: brightness(1.02);
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 1px rgba(199, 164, 107, 0.2), 0 10px 24px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.premium-btn-secondary {
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.premium-btn-secondary:hover {
+  border-color: rgba(199, 164, 107, 0.45);
+  color: var(--accent);
+}
+
+.highlights-strip {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-section);
+  background: rgba(15, 22, 32, 0.55);
+  backdrop-filter: blur(10px);
+}
+
+.highlight-item {
+  position: relative;
+  padding: 24px;
+}
+
+.highlight-item::after {
+  content: "";
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 0;
+  height: 1px;
+  background: rgba(199, 164, 107, 0.45);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.highlight-item:hover::after {
+  opacity: 1;
+}
+
+.highlight-label {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: rgba(232, 238, 246, 0.55);
+}
+
+.highlight-value {
+  margin: 12px 0 0;
+  font-family: var(--font-display), sans-serif;
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.highlight-meta {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: rgba(232, 238, 246, 0.55);
+  line-height: 1.4;
+}
+
+.highlight-proof {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: rgba(232, 238, 246, 0.44);
+  line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+  .highlight-item + .highlight-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 28%;
+    bottom: 28%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .highlight-proof {
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .highlight-item:hover .highlight-proof {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
